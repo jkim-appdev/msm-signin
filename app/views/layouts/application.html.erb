@@ -39,6 +39,7 @@
         Characters
       </a>
     </li>
+    <% if session[:user_id] == nil %>
     <li>
       <a href="/user_sign_up">
         User sign up
@@ -49,11 +50,14 @@
         User sign in
       </a>
     </li>
+
+    <% else %>
     <li>
       <a href="/user_sign_out">
         User sign out
       </a>
     </li>
+    <% end %>
   </ul>
     <%= yield %>
   </body>
