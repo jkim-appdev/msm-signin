@@ -9,17 +9,15 @@
 
     <% the_bookmark = matching_bookmarks.at(0) %>
     <hr>
-    
+
     <% if the_bookmark != nil %>
-      <a href="/delete_bookmark/<%= the_bookmark.id %>">
-        Un-bookmark
-      </a>
+      <a href="/delete_bookmark/<%= the_bookmark.id %>"> Un-bookmark</a>
     <% else %>
       <form action="/insert_bookmark_from_movie_show" method="post">
         <input type="hidden" name="query_movie_id" value="<%= @the_movie.id %>">
 
         <button>
-          Bookmark
+          Bookmark this movie
         </button>
       </form>
     <% end %>
