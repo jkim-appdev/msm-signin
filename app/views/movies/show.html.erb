@@ -4,6 +4,20 @@
       Movie #<%= @the_movie.id %> details
     </h1>
 
+
+    <hr>
+      <form action="/insert_bookmark_from_movie_show" method="post">
+        <input type="hidden" name="query_movie_id" value="<%= @the_movie.id %>" >
+        <button>
+          Bookmark
+        </button>
+
+
+      </form>
+
+
+    <% matching_bookmarks = Bookmark.where({:user)id => @current_user.id, :movie_id => @the_movie.id })%>
+    <hr>
     <div>
       <div>
         <a href="/movies">
